@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: java-quarkus-sumyrtxb
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: java-quarkus-sumyrtxb 
+  name: java-quarkus-sumyrtxb
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: java-quarkus-sumyrtxb
+    weight: 100 
